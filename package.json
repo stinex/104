@@ -1,0 +1,30 @@
+{
+  "name": "104",
+  "version": "1.0.0",
+  "description": "104",
+  "main": "mainapp.js",
+  "scripts": {
+    "start": "node mainapp.js",
+    "server": "nodemon mainapp.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": [
+    "mern"
+  ],
+  "author": "Aparin Vladislav <stinex.sx@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@material-ui/icons": "^4.11.2",
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.7",
+    "express": "^4.17.2",
+    "express-validator": "^6.14.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.8"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "nodemon": "^2.0.15"
+  }
+}

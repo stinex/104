@@ -1,0 +1,22 @@
+.modal_wrapper {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+}
+
+.modal_wrapper.open{
+    transform: scale(1);
+}
+
+.modal__content {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+}
