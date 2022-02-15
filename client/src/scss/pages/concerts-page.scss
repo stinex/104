@@ -1,0 +1,47 @@
+.concerts__wrapper {
+    background: url(../../img/bg-concerts.png) center no-repeat;
+    background-position: center 120px;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+}
+
+.concerts {
+    padding-top: 29vh;
+    & .item {
+        margin-bottom: 171px;
+        display: block;
+        & .location {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            line-height: 1.1em;
+        }
+
+        & .city {
+            font-size: 70px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.1em;
+            transition: all 450ms ease-in-out;
+        }
+
+        & .date {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.1em;
+            transition: all 450ms ease-in-out;
+            -webkit-text-stroke-width: 1px;
+            color: transparent;
+            -webkit-text-stroke-color: $white;
+        }
+
+        &:hover .city{
+            color: $yellow;
+        }
+        &:hover .date{
+            transition: all 450ms ease-in-out;
+            -webkit-text-stroke-color: $yellow;
+        }
+    }
+}

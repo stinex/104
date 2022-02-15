@@ -1,0 +1,111 @@
+.header__wrapper {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+
+    & .blur {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        filter: blur(10px);
+
+        -webkit-backdrop-filter: blur(3px);
+        backdrop-filter: blur(3px);
+    }
+
+    & .header {
+        padding-top: 20px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        position: relative;
+
+        & .logo {
+            position: relative;
+            z-index: 2;
+        }
+        & .right_header {
+            display: flex;
+            align-items: center;
+            padding-top: 22px;
+            & .social {
+                display: flex;
+                align-items: center;
+                & .link {
+                    outline: 0;
+                    line-height: 40px;
+                    text-align: center;
+                    display: inline-block;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    position: relative;
+                    font-size: 13px;
+                    padding: 0 3px;
+                    font-weight: 300;
+
+                    &:hover {
+                        &:after {
+                            opacity: 1;
+                            transform: translateY(0) rotateX(0);
+                        }
+
+                        &:before {
+                            opacity: 0;
+                            transform: translateY(-50%) rotateX(90deg);
+                        }
+                    }
+
+                    &:after {
+                        top: 0;
+                        left: 0;
+                        opacity: 0;
+                        width: 100%;
+                        display: block;
+                        transition: $speed;
+                        position: absolute;
+                        content: attr(data-back);
+                        transform: translateY(50%) rotateX(90deg);
+                        font-weight: 600;
+                    }
+
+                    &:before {
+                        top: 0;
+                        left: 0;
+                        opacity: 1;
+                        display: block;
+                        line-height: 40px;
+                        transition: $speed;
+                        position: relative;
+                        content: attr(data-front);
+                        transform: translateY(0) rotateX(0);
+                    }
+                }
+
+                & span {
+                    display: block;
+                    width: 50px;
+                    height: 1px;
+                    background: $white;
+                    margin: 0 20px;
+                    opacity: 0.3;
+                }
+            }
+            & .nav_bar {
+                width: 50px;
+                height: 30px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                margin-left: 70px;
+
+                & span {
+                    width: 100%;
+                    height: 1px;
+                    background: $white;
+                }
+            }
+        }
+    }
+}

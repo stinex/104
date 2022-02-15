@@ -1,9 +1,17 @@
 import React from "react";
+import NotFound from '../img/404.png';
+
 
 export const NotFoundPage = () => {
+
+
     return (
-        <>
-            <h1>404</h1>
-        </>
+        <div className='container'>
+            <div className="not-found">
+                <img src={NotFound} alt="" />
+                <p>К сожалению, данная страница не существует</p>
+                <a href="/">На главную</a>
+            </div>
+        </div>
     )
 }

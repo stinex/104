@@ -20,11 +20,11 @@ export const useRouts = isAutheticated => {
             <Routes>
                 <Route path="/authpanel" element={isAutheticated ? <Navigate to="/admin" /> : <AuthPage />} />
                 <Route path='/admin' element={<AdminPage />} exact />
+                <Route path='/' element={<HomePage />} exact />
                 <Route path='/admin-concerts-page' element={<AdminСoncertsPage />} exact />
                 <Route path='/admin-tracks-page' element={<AdminTracksPage />} exact />
                 <Route path='/admin-video-page' element={<AdminVideoPage />} exact />
                 <Route path="*" element={<NotFoundPage />} />
-
                 <Route path='/concerts-page' element={<СoncertsPage />} exact />
                 <Route path='/contacts-page' element={<СontactsPage />} exact />
                 <Route path='/tracks-page' element={<TracksPage />} exact />

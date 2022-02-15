@@ -1,0 +1,90 @@
+.contacts {
+    padding-top: 29vh;
+    display: flex;
+
+    & .block-l {
+        max-width: 504px;
+        width: 100%;
+
+        & .links {
+            & .link {
+                font-family: 'Druk Cyr';
+                text-transform: uppercase;
+                font-size: 45px;
+                font-weight: 400;
+                display: block;
+                line-height: 1em;
+                margin-bottom: 30px;
+                -webkit-text-stroke-width: 1px;
+                color: transparent;
+                letter-spacing: 0.04em;
+                -webkit-text-stroke-color: $white;
+                transition: all 450ms ease-in-out;
+                &:last-child {
+                    margin: 0;
+                }
+
+                &:hover {
+                    color: $white;
+                    transition: all 450ms ease-in-out;
+                    -webkit-text-stroke-color: transparent;
+                }
+            }
+        }
+    }
+    & .block-r {
+        & .header {
+            font-size: 35px;
+            font-weight: 400;
+            margin-bottom: 31px;
+            line-height: 1em;
+        }
+
+        & .social-tl {
+            margin-bottom: 44px;
+            & .tl {
+                font-size: 24px;
+                font-weight: 600;
+                margin-bottom: 17px;
+                line-height: 1.1em;
+                display: block;
+            }
+
+            & a {
+                font-size: 24px;
+                font-weight: 300;
+                display: block;
+                line-height: 1.1em;
+                margin-bottom: 3px;
+            }
+
+            & .tl-bottom{
+                margin-bottom: 10px;
+            }
+            & .name{
+                font-size: 24px;
+                font-weight: 300;
+                display: block;
+                line-height: 1.1em;
+            }
+        }
+
+        & .social-ph {
+            margin-bottom: 65px;
+            & a {
+                font-size: 24px;
+                font-weight: 300;
+                display: block;
+                line-height: 1.1em;
+                margin-bottom: 10px;
+            }
+
+            & span{
+                font-size: 24px;
+                font-weight: 300;
+                display: block;
+                line-height: 1.1em;
+            }
+        }
+    }
+}
