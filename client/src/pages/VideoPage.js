@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation } from "swiper"
 import 'swiper/css'
-
+import "swiper/css/navigation"
 import Vid from '../img/vid.png'
 
 export const VideoPage = () => {
