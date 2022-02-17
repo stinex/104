@@ -8,11 +8,18 @@
 @import 'fonts.scss';
 
 /* Страницы */
+
+@import 'pages/home-page.scss';
 @import 'pages/concerts-page.scss';
 @import 'pages/contacts-page.scss';
 @import 'pages/not-found-page.scss';
+@import 'pages/about-me-page.scss';
+@import 'pages/tracks-page.scss';
+@import 'pages/video-page.scss';
+
 
 
 
 /* Компоненты */
 @import 'companents/header.scss';
+@import 'companents/nav-manu.scss';

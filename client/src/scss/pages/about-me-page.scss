@@ -1,0 +1,31 @@
+.about_me__wrapper {
+    background: url(../../img/bg-about-me.png) right center no-repeat;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+}
+
+.about_me {
+    max-width: 470px;
+    & h2 {
+        font-family: "Druk Cyr";
+        text-transform: uppercase;
+        padding-top: 29vh;
+        font-size: 20px;
+        font-weight: 400;
+        margin-bottom: 10px;
+        line-height: 1.2em;
+    }
+
+    & p {
+        font-size: 12px;
+        font-weight: 300;
+        margin: 0 0 10px;
+        line-height: 1.5em;
+        text-transform: uppercase;
+
+        & span {
+            font-weight: 700;
+        }
+    }
+}

@@ -12,6 +12,10 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+#root{
+    overflow-x: hidden;
+}
+
 a {
     color: $white;
 }
@@ -24,9 +28,12 @@ button {
     cursor: pointer;
 }
 
-.container {
+.container__wrapper{
     position: relative;
+    max-width: 1210px;
+    margin: 0 auto;
 }
+
 
 .wrapper_preloader {
     display: flex;

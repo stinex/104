@@ -1,0 +1,40 @@
+.video {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+
+    & .video__wrapper {
+        max-width: 830px;
+        margin: 162px auto 0;
+        & .swiper {
+            overflow: revert;
+            & .swiper-slide {
+                position: relative;
+            }
+        }
+
+        & .information {
+            margin-top: 30px;
+            // position: absolute;
+            // bottom: -100px;
+
+            & .title {
+                font-family: "Druk Cyr";
+                font-size: 50px;
+                font-weight: 400;
+                line-height: 1.2em;
+                text-transform: uppercase;
+                margin-bottom: 12px;
+            }
+            & .year {
+                font-family: "Druk Cyr";
+                font-size: 50px;
+                font-weight: 400;
+                line-height: 1.2em;
+                -webkit-text-stroke-width: 1px;
+                color: transparent;
+                -webkit-text-stroke-color: $white;
+            }
+        }
+    }
+}

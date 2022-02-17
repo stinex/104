@@ -6,7 +6,7 @@ export const NotFoundPage = () => {
 
 
     return (
-        <div className='container'>
+        <div className='container__wrapper'>
             <div className="not-found">
                 <img src={NotFound} alt="" />
                 <p>К сожалению, данная страница не существует</p>

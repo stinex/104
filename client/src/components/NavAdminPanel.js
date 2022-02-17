@@ -14,7 +14,7 @@ export const NavAdminPanel = () => {
     return (
         <nav className="blue-grey darken-4">
             <div className="nav-wrapper">
-                <div className='container'>
+                <div className='container__wrapper'>
                     <a href="/admin" className="brand-logo">Admin panel 104</a>
                     <ul id="nav-mobile" className="right hide-on-med-and-down">
                         <li><a href='/admin-concerts-page'>Концерты</a></li>

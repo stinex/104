@@ -1,0 +1,65 @@
+.home {
+    height: 100vh;
+    width: 100%;
+    padding: 159px 0;
+
+
+    .home__wrapper {
+        display: flex;
+        align-items: center;
+        position: relative;
+        height: 100%;
+
+        & .nav__home {
+            display: flex;
+            flex-direction: column;
+
+            & a {
+                font-family: "Druk Cyr";
+                font-size: 60px;
+                font-weight: 400;
+                opacity: 0.8;
+                color: $white;
+                line-height: 1.2em;
+                text-transform: uppercase;
+                margin-bottom: 30px;
+
+                &:last-child {
+                    margin: 0;
+                }
+
+                & span {
+                    transition: all 250ms ease-in-out;
+                }
+
+                &:hover span {
+                    padding-left: 76px;
+                    background: url(../../img/arrow54x49.svg) left center no-repeat;
+                }
+                &:hover {
+                    color: $yellow;
+                }
+            }
+        }
+
+        & .information {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            text-align: end;
+
+            & span {
+                display: block;
+                margin-bottom: 10px;
+                font-size: 16px;
+                font-weight: 400;
+                letter-spacing: 0.09em;
+                line-height: 1.5em;
+
+                &:last-child{
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

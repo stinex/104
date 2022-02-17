@@ -1,0 +1,61 @@
+.tracks {
+    padding-top: 30em;
+
+    & .track {
+        position: relative;
+        margin-bottom: 600px;
+
+        &:last-child{
+            margin-bottom: 200px;
+        }
+        & span {
+            display: block;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.1em;
+            margin-bottom: 11px;
+            position: relative;
+            z-index: 2;
+        }
+        & .type {
+            text-transform: uppercase;
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 11px;
+            line-height: 1.5em;
+            position: relative;
+            z-index: 2;
+        }
+        & .name {
+            font-family: "Druk Cyr";
+            font-size: 60px;
+            font-weight: 400;
+            line-height: 1.2em;
+            margin-bottom: 61px;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 2;
+        }
+        & .music__venuea {
+            display: grid;
+            max-width: 180px;
+            grid-template-columns: repeat(2, 1fr);
+            grid-row-gap: 12px;
+            padding-top: 11px;
+            position: relative;
+            z-index: 2;
+
+            & a {
+                display: block;
+            }
+        }
+        & .cover{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+    }
+
+}

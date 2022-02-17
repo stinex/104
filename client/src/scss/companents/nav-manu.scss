@@ -1,0 +1,43 @@
+.nav__manu {
+    width: 100vw;
+    height: 100vh;
+    background: $bg;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 200ms ease-in-out;
+
+    & .nav__manu_wrapper {
+        padding-top: 24vh;
+        display: flex;
+        flex-direction: column;
+
+        & a {
+            font-size: 40px;
+            font-weight: 500;
+            color: $grey;
+            line-height: 60px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            transform: translateX(-100%);
+            transition: all 450ms ease-in-out;
+
+            &:hover {
+                color: $white;
+                transition: all 450ms ease-in-out;
+            }
+        }
+    }
+
+    &.open {
+        opacity: 1;
+        z-index: 9;
+        & .nav__manu_wrapper {
+            & a {
+                transform: translateX(0%);
+            }
+        }
+    }
+}

@@ -13,7 +13,7 @@ export const СoncertsPage = () => {
         <>
             <div className="concerts__wrapper">
             </div>
-            <div className='container'>
+            <div className='container__wrapper'>
 
                 <div className="concerts">
                     {
