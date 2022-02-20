@@ -3,7 +3,6 @@ import Spotify from '../img/spotify.png'
 import vkMusic from '../img/vk-music.png'
 import YandexMusic from '../img/yandex-music.png'
 import { Helmet } from 'react-helmet'
-
 import Lb from '../img/alb.png'
 
 export const TracksPage = () => {
@@ -12,7 +11,6 @@ export const TracksPage = () => {
             <Helmet>
                 <title>Треки</title>
             </Helmet>
-
             <div className='container__wrapper'>
                 <div className="tracks">
                     <div className="track">
@@ -40,7 +38,6 @@ export const TracksPage = () => {
 
                         <img className='cover' src={Lb} alt="" />
                     </div>
-
 
                     <div className="track">
                         <div className="type">

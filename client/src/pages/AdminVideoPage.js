@@ -11,7 +11,6 @@ export const AdminVideoPage = () => {
     const [p, setP] = useState(false)
     const [data, setData] = useState([])
 
-
     const fatchVideos = useCallback(async () => {
         try {
             const fatched = await request('/api/video', 'GET', null, {
@@ -21,14 +20,11 @@ export const AdminVideoPage = () => {
         } catch (e) { }
     }, [auth.token, request])
 
-
-
     const deleteVideoHandler = async (event) => {
         try {
             const newData = await request('/api/video/deletevideo', 'POST', { from: event.target.attributes[0].value }, {
                 Authorization: `Bearer ${auth.token}`
             })
-
             data.splice(data.indexOf(data.find(item => item._id === event.target.attributes[0].value)), 1)
             setData(data)
             setP(!p)
@@ -43,11 +39,9 @@ export const AdminVideoPage = () => {
         return <Loader />
     }
 
-
     return (
         <>
             <button className=" waves-light btn" onClick={() => setModalActive(true)}>Добавить видео</button>
-
             {!data.length ? <p>Видео нет</p> : <table>
                 <thead>
                     <tr>
@@ -57,7 +51,6 @@ export const AdminVideoPage = () => {
                         <th>Ссылка</th>
                     </tr>
                 </thead>
-
                 {data.map((data, index) => {
                     return (
                         <tbody key={index}>
@@ -71,9 +64,7 @@ export const AdminVideoPage = () => {
                         </tbody>
                     )
                 })}
-
             </table>}
-
             <AddVideoAdmin active={modalActive} setActive={setModalActive} data={data} p={p} setP={setP} />
         </>
     )

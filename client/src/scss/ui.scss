@@ -12,8 +12,8 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
-#root{
-    overflow-x: hidden;
+#root {
+    // overflow-x: hidden;
 }
 
 a {
@@ -28,12 +28,12 @@ button {
     cursor: pointer;
 }
 
-.container__wrapper{
+.container__wrapper {
     position: relative;
-    max-width: 1210px;
+    max-width: 1240px;
     margin: 0 auto;
+    padding: 0 15px;
 }
-
 
 .wrapper_preloader {
     display: flex;
@@ -59,27 +59,29 @@ button {
             filter: grayscale(0%);
             filter: transparent;
             transition: all 850ms ease-in-out;
-            -webkit-animation: 0.1s tremor ease-out ;
+            -webkit-animation: 0.1s tremor ease-out;
             animation-iteration-count: 3;
         }
     }
 }
 
-
 @-webkit-keyframes tremor {
-    0%, 25% {
+    0%,
+    25% {
         left: -1px;
-        top:-1px;
+        top: -1px;
         -webkit-transform: translateX(-1%) translateY(1%);
         transform: translateX(-1%) translateY(1%);
     }
-    50%, 80% {
+    50%,
+    80% {
         left: 1px;
         top: 1px;
         -webkit-transform: translateX(1%) translateY(-1%);
         transform: translateX(1%) translateY(-1%);
     }
-    90%, 100% {
+    90%,
+    100% {
         left: 0px;
         top: 0px;
         -webkit-transform: translateX(0) translateY(0);
@@ -87,17 +89,20 @@ button {
     }
 }
 @-moz-keyframes tremor {
-    0%, 25% {
+    0%,
+    25% {
         left: -1px;
         -webkit-transform: translateX(-1%) translateY(1%);
         transform: translateX(-1%) translateY(1%);
     }
-    50%, 80% {
+    50%,
+    80% {
         left: 1px;
         -webkit-transform: translateX(1%) translateY(-1%);
         transform: translateX(1%) translateY(-1%);
     }
-    90%, 100% {
+    90%,
+    100% {
         left: 0px;
         top: 0px;
         -webkit-transform: translateX(0) translateY(0);
@@ -105,17 +110,20 @@ button {
     }
 }
 @-ms-keyframes tremor {
-    0%, 25% {
+    0%,
+    25% {
         left: -1px;
         -webkit-transform: translateX(-1%) translateY(1%);
         transform: translateX(-1%) translateY(1%);
     }
-    50%, 80% {
+    50%,
+    80% {
         left: 1px;
         -webkit-transform: translateX(1%) translateY(-1%);
         transform: translateX(1%) translateY(-1%);
     }
-    90%, 100% {
+    90%,
+    100% {
         left: 0px;
         top: 0px;
         -webkit-transform: translateX(0) translateY(0);
@@ -123,17 +131,20 @@ button {
     }
 }
 @-o-keyframes tremor {
-    0%, 25% {
+    0%,
+    25% {
         left: -1px;
         -webkit-transform: translateX(-1%) translateY(1%);
         transform: translateX(-1%) translateY(1%);
     }
-    50%, 80% {
+    50%,
+    80% {
         left: 1px;
         -webkit-transform: translateX(1%) translateY(-1%);
         transform: translateX(1%) translateY(-1%);
     }
-    90%, 100% {
+    90%,
+    100% {
         left: 0px;
         top: 0px;
         -webkit-transform: translateX(0) translateY(0);
@@ -141,20 +152,36 @@ button {
     }
 }
 @keyframes tremor {
-    0%, 25% {
+    0%,
+    25% {
         left: -1px;
         -webkit-transform: translateX(-1%) translateY(1%);
         transform: translateX(-1%) translateY(1%);
     }
-    50%, 80% {
+    50%,
+    80% {
         left: 1px;
         -webkit-transform: translateX(1%) translateY(-1%);
         transform: translateX(1%) translateY(-1%);
     }
-    90%, 100% {
+    90%,
+    100% {
         left: 0px;
         top: 0px;
         -webkit-transform: translateX(0) translateY(0);
         transform: translateX(0) translateY(0);
+    }
+}
+
+@media (max-width: 1023px) {
+    .container__wrapper {
+        padding: 0 39px;
+    }
+}
+
+
+@media (max-width: 680px) {
+    .container__wrapper {
+        padding: 0 15px;
     }
 }

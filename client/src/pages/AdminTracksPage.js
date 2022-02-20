@@ -11,8 +11,6 @@ export const AdminTracksPage = () => {
     const [p, setP] = useState(false)
     const [data, setData] = useState([])
 
-
-
     const fatchTracks = useCallback(async () => {
         try {
             const fatched = await request('/api/track', 'GET', null, {
@@ -21,8 +19,6 @@ export const AdminTracksPage = () => {
             setData(fatched)
         } catch (e) { }
     }, [auth.token, request])
-
-
 
     const deleteTrackHandler = async (event) => {
         try {
@@ -43,8 +39,6 @@ export const AdminTracksPage = () => {
     if (loading) {
         return <Loader />
     }
-
-
     return (
         <>
             <button className=" waves-light btn" onClick={() => setModalActive(true)}>Добавить трек</button>
@@ -77,9 +71,7 @@ export const AdminTracksPage = () => {
                         </tbody>
                     )
                 })}
-
             </table>}
-
             <AddTrackAdmin active={modalActive} setActive={setModalActive} data={data} p={p} setP={setP} />
         </>
     )

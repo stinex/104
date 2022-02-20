@@ -2,9 +2,11 @@
     height: 100vh;
     display: flex;
     align-items: center;
+    overflow-x: hidden;
 
     & .video__wrapper {
         max-width: 830px;
+        width: 100%;
         margin: 162px auto 0;
         & .swiper {
             overflow: revert;
@@ -31,9 +33,59 @@
                 font-size: 50px;
                 font-weight: 400;
                 line-height: 1.2em;
-                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-width: 0.5px;
                 color: transparent;
                 -webkit-text-stroke-color: $white;
+            }
+        }
+
+        & .mobile__video {
+            display: none;
+        }
+    }
+}
+@media (max-width: 1023px) {
+    .video {
+        overflow: revert;
+        align-items: flex-start;
+        & .video__wrapper {
+            & .swiper {
+                display: none !important;
+            }
+            & .mobile__video {
+                display: block;
+                & .item {
+                    & img {
+                        width: 100%;
+                    }
+                }
+            }
+            & .information {
+                & .title {
+                    margin-bottom: 6px;
+                    font-size: 30px;
+                }
+                & .year {
+                    font-size: 30px;
+                    margin-bottom: 103px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 680px) {
+    .video {
+        & .video__wrapper {
+            & .information {
+                margin-top: 22px;
+
+                & .title {
+                    font-size: 20px;
+                }
+                & .year {
+                    margin-bottom: 44px;
+                    font-size: 20px;
+                }
             }
         }
     }

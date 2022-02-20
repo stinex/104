@@ -1,5 +1,3 @@
-import React from "react";
-
 export const СontactsPage = () => {
     return (
         <>
@@ -16,7 +14,7 @@ export const СontactsPage = () => {
                     </div>
 
                     <div className="block-r">
-                        <div className="header">MGMT/BOOKING </div>
+                        <div className="header">MGMT/<br/>BOOKING </div>
 
                         <div className="social-tl">
                             <span className="tl">telegram</span>

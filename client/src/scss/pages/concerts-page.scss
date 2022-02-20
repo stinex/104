@@ -16,32 +16,78 @@
             font-weight: 400;
             margin-bottom: 20px;
             line-height: 1.1em;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
         }
 
         & .city {
+            font-family: "Druk Cyr";
+            letter-spacing: 0.1em;
             font-size: 70px;
             font-weight: 800;
             margin-bottom: 20px;
             line-height: 1.1em;
             transition: all 450ms ease-in-out;
+            text-transform: uppercase;
         }
 
         & .date {
+            font-family: "Druk Cyr";
+            letter-spacing: 0.07em;
             font-size: 48px;
             font-weight: 800;
             line-height: 1.1em;
             transition: all 450ms ease-in-out;
-            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-width: 0.5px;
             color: transparent;
             -webkit-text-stroke-color: $white;
         }
 
-        &:hover .city{
+        &:hover .city {
             color: $yellow;
         }
-        &:hover .date{
+        &:hover .date {
             transition: all 450ms ease-in-out;
             -webkit-text-stroke-color: $yellow;
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    .concerts {
+        & .item {
+            margin-bottom: 106px;
+            & .location {
+                margin-bottom: 26px;
+                font-size: 20px;
+            }
+            & .city {
+                margin-bottom: 10px;
+                font-size: 50px;
+            }
+            & .date {
+                font-size: 40px;
+            }
+        }
+    }
+}
+@media (max-width: 680px) {
+    .concerts__wrapper {
+        background: url(../../img/bg-concerts-s.png) center no-repeat;
+        background-position: center 76px;
+    }
+    .concerts {
+        padding-top: 39vh;
+        & .item {
+            margin-bottom: 66px;
+            & .location {
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
+            & .city, & .date{
+                font-size: 30px;
+                line-height: 1.2em;
+            }
         }
     }
 }

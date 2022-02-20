@@ -195,3 +195,65 @@
         transform: translateY(-50%) rotate(134deg);
     }
 }
+@media (max-width: 1023px) {
+    .header__wrapper {
+        & .header {
+            padding-top: 15px;
+            & .logo {
+                & img {
+                    height: 106px;
+                }
+            }
+            & .right_header {
+                & .nav_bar {
+                    width: 72px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 680px) {
+    .header__wrapper {
+        & .header {
+            padding-top: 0px;
+            & .logo {
+                & img {
+                    height: 71px;
+                }
+            }
+
+            & .right_header {
+                & .nav_bar {
+                    width: 50px;
+                    height: 22px;
+                    & span {
+                        height: 2px;
+
+                        &::after,
+                        &::before {
+                            height: 2px;
+                        }
+                    }
+                }
+
+                & .social {
+                    right: -195px;
+                    & .link {
+                        font-size: 12px;
+                        padding: 0px;
+
+                        &::after {
+                            font-weight: 300;
+                        }
+                    }
+
+                    & span {
+                        width: 30px !important;
+                        margin: 0 10px !important;
+                    }
+                }
+            }
+        }
+    }
+}

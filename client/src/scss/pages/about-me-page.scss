@@ -29,3 +29,48 @@
         }
     }
 }
+
+@media (max-width: 1023px) {
+    .header__wrapper {
+        & .header {
+            & .right_header {
+                & .social.hide-modile {
+                    display: none !important;
+                }
+            }
+        }
+    }
+
+    .about_me__wrapper {
+        background: url(../../img/bg-about-me-m.png) center no-repeat;
+        background-size: cover;
+    }
+    .about_me {
+        position: relative;
+        height: 100vh;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        & h2 {
+            padding-top: 32vh;
+        }
+    }
+}
+@media (max-width: 680px) {
+    .about_me__wrapper{
+        background: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 1) 75%), url(../../img/bg-about-me-s.png) top center no-repeat;
+    }
+    .about_me {
+        height: auto;
+        margin-bottom: 60px;
+        & h2{
+            padding-top: 245px;
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+        & p {
+            padding-right: 2px;
+        }
+    }
+}

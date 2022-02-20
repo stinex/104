@@ -65,7 +65,6 @@ export const AuthPage = () => {
                     </div>
                     <div className="col s12">
                         <button className="btn blue-grey darken-4" onClick={loginHandler} disabled={loading}>sign in</button>
-
                         <button className="btn blue-grey darken-4 blac" onClick={registerHandler} disabled={loading}>register</button>
                     </div>
                 </div>

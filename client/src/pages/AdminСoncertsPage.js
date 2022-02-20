@@ -5,14 +5,12 @@ import { Modal } from "../components/Modal";
 import { AuthContext } from "../context/AuthContext";
 import { useHttp } from "../hooks/http.hook";
 
-
 export const AdminСoncertsPage = () => {
     const auth = useContext(AuthContext)
     const { request, loading } = useHttp()
     const [modalActive, setModalActive] = useState(false)
     const [p, setP] = useState(false)
     const [data, setData] = useState([])
-
 
     const fatchConcerts = useCallback(async () => {
         try {
@@ -35,21 +33,16 @@ export const AdminСoncertsPage = () => {
         } catch (e) { }
     }
 
-
-
     useEffect(() => {
         fatchConcerts()
     }, [fatchConcerts, request])
-
 
     if (loading) {
         return <Loader />
     }
     return (
         <>
-
             <button className=" waves-light btn" onClick={() => setModalActive(true)}>Добавить концер</button>
-
             {!data.length ? <p>Концертов нет</p> : <table>
                 <thead>
                     <tr>
@@ -72,9 +65,7 @@ export const AdminСoncertsPage = () => {
                         </tbody>
                     )
                 })}
-
             </table>}
-
             <Modal active={modalActive} setActive={setModalActive} data={data} p={p} setP={setP} />
         </>
     )

@@ -1,5 +1,4 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation } from "swiper"
 import 'swiper/css'
 import "swiper/css/navigation"
 import Vid from '../img/vid.png'
@@ -7,46 +6,72 @@ import Vid from '../img/vid.png'
 export const VideoPage = () => {
 
     return (
-
-        <div className='container__wrapper'>
-            <div className="video">
-                <div className="video__wrapper">
-                    <Swiper
-                        spaceBetween={70}
-                        slidesPerView='auto'
-                        onSlideChange={() => console.log('slide change')}
-                        onSwiper={(swiper) => console.log(swiper)}
-                    >
-                        <SwiperSlide>
+        <div className="video">
+            <div className="video__wrapper">
+                <Swiper
+                    spaceBetween={70}
+                    slidesPerView='auto'
+                >
+                    <SwiperSlide>
+                        <img src={Vid} alt="" />
+                        <div className="information">
+                            <div className="title">крылья</div>
+                            <div className="year">2021</div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <img src={Vid} alt="" />
+                        <div className="information">
+                            <div className="title">крылья</div>
+                            <div className="year">2021</div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <img src={Vid} alt="" />
+                        <div className="information">
+                            <div className="title">крылья</div>
+                            <div className="year">2021</div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <img src={Vid} alt="" />
+                        <div className="information">
+                            <div className="title">крылья</div>
+                            <div className="year">2021</div>
+                        </div>
+                    </SwiperSlide>
+                </Swiper>
+                <div className='container__wrapper'>
+                    <div className='mobile__video'>
+                        <div className='item'>
                             <img src={Vid} alt="" />
                             <div className="information">
                                 <div className="title">крылья</div>
                                 <div className="year">2021</div>
                             </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
+                        </div>
+                        <div className='item'>
                             <img src={Vid} alt="" />
                             <div className="information">
                                 <div className="title">крылья</div>
                                 <div className="year">2021</div>
                             </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
+                        </div>
+                        <div className='item'>
                             <img src={Vid} alt="" />
                             <div className="information">
                                 <div className="title">крылья</div>
                                 <div className="year">2021</div>
                             </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
+                        </div>
+                        <div className='item'>
                             <img src={Vid} alt="" />
                             <div className="information">
                                 <div className="title">крылья</div>
                                 <div className="year">2021</div>
                             </div>
-                        </SwiperSlide>
-
-                    </Swiper>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

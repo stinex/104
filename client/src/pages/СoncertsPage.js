@@ -1,6 +1,3 @@
-import React from "react";
-
-
 const arr = [
     { city: 'Санкт-петербург', location: 'Aurora', date: '24 Апреля', link: 'ссылка на покупку билетов' },
     { city: 'Челябинск', location: 'ГлавCLUB', date: '30 Апреля', link: 'ссылка на покупку билетов' },

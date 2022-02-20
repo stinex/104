@@ -1,18 +1,20 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import { useState } from 'react'
+import { useLocation } from 'react-router-dom';
 import Logo from '../img/logo.png'
 import { NavMenu } from './NavMenu'
 
 
 
-export const Header = () => {
 
+export const Header = () => {
+    let location = useLocation();
     const [openMenu, setOpenMenu] = useState(false)
 
     return (
         <>
             <div className="header__wrapper">
-                <div className="blur"></div>
+                <div className={ location.pathname === '/about-page' ? 'blur hide': 'blur' }></div>
                 <div className="container__wrapper">
                     <div className="header">
 
@@ -20,7 +22,7 @@ export const Header = () => {
                             <img src={Logo} alt="" />
                         </a>
                         <div className="right_header">
-                            <div className="social">
+                            <div className={location.pathname === '/' ? 'social': 'social hide-modile'}>
                                 <a className="link" target='_blank' href="https://t.me/molodoi_boss_104" data-back="telegram" data-front="telegram" rel="noreferrer"></a>
                                 <span></span>
                                 <a className="link" target='_blank' href="https://vk.com/phanatixxx" data-back="VK" data-front="VK" rel="noreferrer"></a>

@@ -1,10 +1,6 @@
-import React from "react";
 import NotFound from '../img/404.png';
 
-
 export const NotFoundPage = () => {
-
-
     return (
         <div className='container__wrapper'>
             <div className="not-found">

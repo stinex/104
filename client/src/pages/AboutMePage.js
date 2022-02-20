@@ -1,10 +1,7 @@
-import React from "react";
-
 export const AboutMePage = () => {
     return (
         <>
             <div className="about_me__wrapper">
-
             </div>
             <div className='container__wrapper'>
                 <div className="about_me">
