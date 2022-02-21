@@ -5,7 +5,7 @@ import { AuthContext } from './context/AuthContext';
 import { NavAdminPanel } from './components/NavAdminPanel';
 import { Loader } from './components/Loader';
 import { Header } from './components/Header';
-import Preloader from './img/preloader.svg';
+import Preloader from './ui/104.mp4';
 import { useLocation } from 'react-router-dom';
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
       }, 1500);
       window.setTimeout(function () {
         setPreloader(!preloader)
-      }, 3000);
+      }, 5000);
     }
   }
 
@@ -32,7 +32,9 @@ function App() {
   if (!preloader && location.pathname === '/') {
     return (
       <div className='wrapper_preloader'>
-        <img ref={refPreloader} className='preloader' src={Preloader} />
+        <video ref={refPreloader} className='preloader' playsinline autoplay='true' muted loop id="myVideo">
+          <source src={Preloader} type="video/mp4"/>
+        </video>
       </div>
     )
   }
