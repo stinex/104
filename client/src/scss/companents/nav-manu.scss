@@ -17,12 +17,10 @@
         & a {
             font-size: 40px;
             font-weight: 500;
-            color: $grey;
             line-height: 60px;
             text-transform: uppercase;
             margin-bottom: 10px;
-            transform: translateX(-100%);
-            transition: all 450ms ease-in-out;
+            color: #7d7d7d;
 
             &:hover {
                 color: $white;
@@ -36,8 +34,89 @@
         z-index: 9;
         & .nav__manu_wrapper {
             & a {
-                transform: translateX(0%);
+                transform: translateX(-100%);
+                animation: slidein 0.8s forwards;
+
+                &.d-0 {
+                    animation-delay: 0s;
+                }
+
+                &.d-02 {
+                    animation-delay: 0.2s;
+                }
+
+                &.d-03 {
+                    animation-delay: 0.3s;
+                }
+                &.d-04 {
+                    animation-delay: 0.4s;
+                }
+                &.d-05 {
+                    animation-delay: 0.5s;
+                }
+                &.d-06 {
+                    animation-delay: 0.6s;
+                }
             }
         }
+    }
+}
+
+/* Animation */
+
+@keyframes slidein {
+    from {
+        transform: translateX(-100%);
+    }
+    25% {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@-webkit-keyframes slidein {
+    from {
+        transform: translateX(-100%);
+    }
+    25% {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+@-moz-keyframes slidein {
+    from {
+        transform: translateX(-100%);
+    }
+    25% {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+@-o-keyframes slidein {
+    from {
+        transform: translateX(-100%);
+    }
+    25% {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+@keyframes slidein {
+    from {
+        transform: translateX(-100%);
+    }
+    25% {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0%);
     }
 }

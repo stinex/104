@@ -1,7 +1,9 @@
 export const AdminPage = () => {
     return (
         <>
-            <h1>AdminPage</h1>
+            <div className="container__wrapper">
+                <h1>AdminPage</h1>
+            </div>
         </>
     )
 }

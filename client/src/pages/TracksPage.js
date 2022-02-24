@@ -1,11 +1,28 @@
+
+import { useState, useEffect, useCallback } from "react"
+import { useHttp } from "../hooks/http.hook"
 import AppleMusic from '../img/apple-music.png'
 import Spotify from '../img/spotify.png'
 import vkMusic from '../img/vk-music.png'
 import YandexMusic from '../img/yandex-music.png'
 import { Helmet } from 'react-helmet'
-import Lb from '../img/alb.png'
 
 export const TracksPage = () => {
+    const [data, setData] = useState([])
+    const { request } = useHttp()
+
+    const fatchConcerts = useCallback(async () => {
+        try {
+            const fatched = await request('/api/track', 'GET', null, {
+            })
+            setData(fatched)
+        } catch (e) { }
+    }, [request])
+
+    useEffect(() => {
+        fatchConcerts()
+    }, [fatchConcerts, request])
+
     return (
         <>
             <Helmet>
@@ -13,57 +30,50 @@ export const TracksPage = () => {
             </Helmet>
             <div className='container__wrapper'>
                 <div className="tracks">
-                    <div className="track">
-                        <div className="type">
-                            Альбом
-                        </div>
-                        <div className="name">
-                            Кино без сигарет
-                        </div>
-                        <span>слушать:</span>
-                        <div className="music__venuea">
-                            <a href="" target='_blank' className="Spotify">
-                                <img src={Spotify} alt="" />
-                            </a>
-                            <a href="" target='_blank' className="vkMusic">
-                                <img src={vkMusic} alt="" />
-                            </a>
-                            <a className="AppleMusic">
-                                <img src={AppleMusic} alt="" />
-                            </a>
-                            <a href="" target='_blank' className="YandexMusic">
-                                <img src={YandexMusic} alt="" />
-                            </a>
-                        </div>
+                    {
+                        data.map((item, i) => {
+                            return (
+                                <div key={i} className="track">
+                                    <div className="type">
+                                        {item?.type}
+                                    </div>
+                                    <div className="name">
+                                        {item?.name}
+                                    </div>
+                                    <span>слушать:</span>
+                                    <div className="music__venuea">
 
-                        <img className='cover' src={Lb} alt="" />
-                    </div>
+                                        {item.url_spotify === '' ? '' :
+                                            <a href={item.url_spotify} target='_blank' className="Spotify" rel="noreferrer">
+                                                <img src={Spotify} alt="" />
+                                            </a>
+                                        }
+                                        {item.url_vk_music === '' ? '' :
+                                            <a href={item.url_vk_music} target='_blank' className="vkMusic" rel="noreferrer">
+                                                <img src={vkMusic} alt="" />
+                                            </a>
+                                        }
+                                        {item.url_itunes === '' ? '' :
+                                            <a href={item.url_itunes} className="AppleMusic">
+                                                <img src={AppleMusic} alt="" />
+                                            </a>
+                                        }
+                                        {item.url_yandex_music === '' ? '' :
+                                            <a href={item.url_yandex_music} target='_blank' className="YandexMusic" rel="noreferrer">
+                                                <img src={YandexMusic} alt="" />
+                                            </a>
+                                        }
 
-                    <div className="track">
-                        <div className="type">
-                            Альбом
-                        </div>
-                        <div className="name">
-                            Кино без сигарет
-                        </div>
-                        <span>слушать:</span>
-                        <div className="music__venuea">
-                            <a href="" target='_blank' className="Spotify">
-                                <img src={Spotify} alt="" />
-                            </a>
-                            <a href="" target='_blank' className="vkMusic">
-                                <img src={vkMusic} alt="" />
-                            </a>
-                            <a className="AppleMusic">
-                                <img src={AppleMusic} alt="" />
-                            </a>
-                            <a href="" target='_blank' className="YandexMusic">
-                                <img src={YandexMusic} alt="" />
-                            </a>
-                        </div>
+                                    </div>
 
-                        <img className='cover' src={Lb} alt="" />
-                    </div>
+                                    <img className='cover' src={item?.img} alt="" />
+                                </div>
+                            )
+                        })
+                    }
+
+
+
                 </div>
             </div>
         </>

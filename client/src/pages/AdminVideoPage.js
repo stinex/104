@@ -41,31 +41,33 @@ export const AdminVideoPage = () => {
 
     return (
         <>
-            <button className=" waves-light btn" onClick={() => setModalActive(true)}>Добавить видео</button>
-            {!data.length ? <p>Видео нет</p> : <table>
-                <thead>
-                    <tr>
-                        <th>Изображение</th>
-                        <th>Название</th>
-                        <th>Дата</th>
-                        <th>Ссылка</th>
-                    </tr>
-                </thead>
-                {data.map((data, index) => {
-                    return (
-                        <tbody key={index}>
-                            <tr>
-                                <td>{data?.img}</td>
-                                <td>{data?.name}</td>
-                                <td>{data?.year}</td>
-                                <td>{data?.link}</td>
-                                <td><button data-id={data?._id} data-number={index} onClick={deleteVideoHandler}>Удалить</button></td>
-                            </tr>
-                        </tbody>
-                    )
-                })}
-            </table>}
-            <AddVideoAdmin active={modalActive} setActive={setModalActive} data={data} p={p} setP={setP} />
+            <div className="container__wrapper video__panel">
+                <button className=" waves-light btn" onClick={() => setModalActive(true)}>Добавить видео</button>
+                {!data.length ? <p>Видео нет</p> : <table>
+                    <thead>
+                        <tr>
+                            <th>Изображение</th>
+                            <th>Название</th>
+                            <th>Дата</th>
+                            <th>Ссылка</th>
+                        </tr>
+                    </thead>
+                    {data.map((data, index) => {
+                        return (
+                            <tbody key={index}>
+                                <tr>
+                                    <td><img src={data?.img}/></td>
+                                    <td>{data?.name}</td>
+                                    <td>{data?.year}</td>
+                                    <td>{data?.link}</td>
+                                    <td><button data-id={data?._id} data-number={index} className='red-text' onClick={deleteVideoHandler}>Удалить</button></td>
+                                </tr>
+                            </tbody>
+                        )
+                    })}
+                </table>}
+                <AddVideoAdmin active={modalActive} setActive={setModalActive} data={data} p={p} setP={setP} />
+            </div>
         </>
     )
 }

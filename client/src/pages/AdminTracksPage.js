@@ -32,6 +32,8 @@ export const AdminTracksPage = () => {
         } catch (e) { }
     }
 
+    console.log('=============',data)
+
     useEffect(() => {
         fatchTracks()
     }, [fatchTracks, request])
@@ -41,38 +43,40 @@ export const AdminTracksPage = () => {
     }
     return (
         <>
-            <button className=" waves-light btn" onClick={() => setModalActive(true)}>Добавить трек</button>
+            <div className="container__wrapper track__panel">
+                <button className=" waves-light btn" onClick={() => setModalActive(true)}>Добавить трек</button>
 
-            {!data.length ? <p>Треков нет</p> : <table>
-                <thead>
-                    <tr>
-                        <th>Обложка</th>
-                        <th>Название</th>
-                        <th>Тип</th>
-                        <th>iTunes</th>
-                        <th>VK music</th>
-                        <th>Яндекс.Музыка</th>
-                        <th>Spotify</th>
-                    </tr>
-                </thead>
-                {data.map((data, index) => {
-                    return (
-                        <tbody key={index}>
-                            <tr>
-                                <td>{data?.img}</td>
-                                <td>{data?.name}</td>
-                                <td>{data?.type}</td>
-                                <td>{data?.url_itunes}</td>
-                                <td>{data?.url_vk_music}</td>
-                                <td>{data?.url_spotify}</td>
-                                <td>{data?.url_yandex_music}</td>
-                                <td><button data-id={data?._id} data-number={index} onClick={deleteTrackHandler}>Удалить</button></td>
-                            </tr>
-                        </tbody>
-                    )
-                })}
-            </table>}
-            <AddTrackAdmin active={modalActive} setActive={setModalActive} data={data} p={p} setP={setP} />
+                {!data.length ? <p>Треков нет</p> : <table>
+                    <thead>
+                        <tr>
+                            <th>Обложка</th>
+                            <th>Название</th>
+                            <th>Тип</th>
+                            <th>iTunes</th>
+                            <th>VK music</th>
+                            <th>Яндекс.Музыка</th>
+                            <th>Spotify</th>
+                        </tr>
+                    </thead>
+                    {data.map((data, index) => {
+                        return (
+                            <tbody key={index}>
+                                <tr>
+                                    <td><img src={data?.img} alt='Обложка'/></td>
+                                    <td>{data?.name}</td>
+                                    <td>{data?.type}</td>
+                                    <td>{data?.url_itunes}</td>
+                                    <td>{data?.url_vk_music}</td>
+                                    <td>{data?.url_spotify}</td>
+                                    <td>{data?.url_yandex_music}</td>
+                                    <td><button data-id={data?._id} data-number={index} className='red-text' onClick={deleteTrackHandler}>Удалить</button></td>
+                                </tr>
+                            </tbody>
+                        )
+                    })}
+                </table>}
+                <AddTrackAdmin active={modalActive} setActive={setModalActive} data={data} p={p} setP={setP} />
+            </div>
         </>
     )
 }

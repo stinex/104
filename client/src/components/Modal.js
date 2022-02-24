@@ -25,7 +25,7 @@ export const Modal = ({ active, setActive, setData, data, setP, p }) => {
     }
 
     useEffect(() => {
-        window.M.updateTextFields()
+        // window.M.updateTextFields()
     }, [auth.token]);
 
     return (
@@ -41,20 +41,20 @@ export const Modal = ({ active, setActive, setData, data, setP, p }) => {
                                 type="text"
                                 id="city"
                                 className="autocomplete"
-                                placeholder="Москва"
+                                placeholder="Город"
                                 value={city}
                                 onChange={e => setCity(e.target.value)} />
-                            <label htmlFor="autocomplete-input">Город</label>
+                            {/* <label htmlFor="autocomplete-input">Город</label> */}
                         </div>
                         <div className="input-field">
                             <input
                                 type="text"
                                 id="locatin"
                                 className="autocomplete"
-                                placeholder="ГЛАВCLUB"
+                                placeholder="Место проведения концерта"
                                 value={location}
                                 onChange={e => setLocation(e.target.value)} />
-                            <label htmlFor="autocomplete-input">Место</label>
+                            {/* <label htmlFor="autocomplete-input">Место</label> */}
                         </div>
                         <div className="input-field">
                             <input
@@ -63,7 +63,7 @@ export const Modal = ({ active, setActive, setData, data, setP, p }) => {
                                 value={date}
                                 onChange={e => setDate(e.target.value)}
                                 className='datepicker' />
-                            <label htmlFor="autocomplete-input">Дата</label>
+                            {/* <label htmlFor="autocomplete-input">Дата</label> */}
                         </div>
 
                         <div className="input-field">
@@ -71,9 +71,10 @@ export const Modal = ({ active, setActive, setData, data, setP, p }) => {
                                 type="text"
                                 id="link"
                                 className="autocomplete "
+                                placeholder="Ссылка на билеты"
                                 value={link}
                                 onChange={e => setLink(e.target.value)} />
-                            <label htmlFor="autocomplete-input">Ссылка на билеты</label>
+                            {/* <label htmlFor="autocomplete-input">Ссылка на билеты</label> */}
                         </div>
                     </div>
                     <div className="col s8 offset-s2">

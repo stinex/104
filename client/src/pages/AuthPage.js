@@ -17,9 +17,9 @@ export const AuthPage = () => {
         clearError()
     }, [error, message, clearError]);
 
-    useEffect(() => {
-       window.M.updateTextFields()
-    }, []);
+    /*    useEffect(() => {
+          window.M.updateTextFields()
+       }); */
 
     const chengeHandler = event => {
         setForm({ ...form, [event.target.name]: event.target.value })
@@ -40,32 +40,34 @@ export const AuthPage = () => {
     }
 
     return (
-        <div className="row">
-            <div className="col s12">
-                <div className="row">
-                    <div className="input-field col s12">
-                        <input
-                            type="text"
-                            id="login"
-                            name="login"
-                            className="autocomplete"
-                            value={form.login}
-                            onChange={chengeHandler} />
-                        <label htmlFor="autocomplete-input">Login</label>
-                    </div>
-                    <div className="input-field col s12">
-                        <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            className="autocomplete"
-                            value={form.password}
-                            onChange={chengeHandler} />
-                        <label htmlFor="autocomplete-input">Password</label>
-                    </div>
-                    <div className="col s12">
-                        <button className="btn blue-grey darken-4" onClick={loginHandler} disabled={loading}>sign in</button>
-                        <button className="btn blue-grey darken-4 blac" onClick={registerHandler} disabled={loading}>register</button>
+        <div className="container__wrapper">
+            <div className="row">
+                <div className="col s12">
+                    <div className="row">
+                        <div className="input-field col s12">
+                            <input
+                                type="text"
+                                id="login"
+                                name="login"
+                                className="autocomplete"
+                                value={form.login}
+                                onChange={chengeHandler} />
+                            <label htmlFor="autocomplete-input">Login</label>
+                        </div>
+                        <div className="input-field col s12">
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                className="autocomplete"
+                                value={form.password}
+                                onChange={chengeHandler} />
+                            <label htmlFor="autocomplete-input">Password</label>
+                        </div>
+                        <div className="col s12">
+                            <button className="btn blue-grey darken-4" onClick={loginHandler} disabled={loading}>sign in</button>
+                            <button className="btn blue-grey darken-4 blac" onClick={registerHandler} disabled={loading}>register</button>
+                        </div>
                     </div>
                 </div>
             </div>

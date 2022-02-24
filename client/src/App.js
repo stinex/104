@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+
 import { useRouts } from './routes';
 import { useAuth } from './hooks/auth.hook';
 import { AuthContext } from './context/AuthContext';
@@ -7,6 +8,40 @@ import { Loader } from './components/Loader';
 import { Header } from './components/Header';
 import Preloader from './ui/104.mp4';
 import { useLocation } from 'react-router-dom';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { CssBaseline } from '@mui/material';
+import { typography } from '@mui/system';
+
+
+const MainTheme = createTheme({
+  palette: {
+    background: {
+      default: "#000"
+    },
+    text: {
+      primary: '#fff'
+    }
+  },
+  typography: {
+    fontSize: 12,
+    fontFamily: 'Poppins, sans-serif',
+  }
+});
+
+const AdminTheme = createTheme({
+  palette: {
+    background: {
+      default: "#fff"
+    },
+    text: {
+      primary: '#343434'
+    }
+  },
+  typography: {
+    fontSize: 12,
+    fontFamily: 'Poppins, sans-serif',
+  }
+});
 
 function App() {
   const { login, logout, token, userId, ready } = useAuth()
@@ -33,7 +68,7 @@ function App() {
     return (
       <div className='wrapper_preloader'>
         <video ref={refPreloader} className='preloader' playsinline autoplay='true' muted loop id="myVideo">
-          <source src={Preloader} type="video/mp4"/>
+          <source src={Preloader} type="video/mp4" />
         </video>
       </div>
     )
@@ -42,12 +77,32 @@ function App() {
     return (<Loader />)
   }
   return (
+
     <AuthContext.Provider value={{
       login, logout, token, userId, isAuthenticated
     }}>
-      {isAuthenticated && <NavAdminPanel />}
-      <Header />
-      {routes}
+      <ThemeProvider theme={
+        location.pathname === '/admin-concerts-page' ||
+          location.pathname === '/admin-tracks-page' ||
+          location.pathname === '/admin-video-page' ||
+          location.pathname === '/admin' ||
+          location.pathname === '/authpanel' ? AdminTheme : MainTheme
+      } >
+        <CssBaseline />
+        {isAuthenticated &&
+          location.pathname === '/admin-concerts-page' ||
+          location.pathname === '/admin-tracks-page' ||
+          location.pathname === '/admin-video-page' ||
+          location.pathname === '/admin' ||
+          location.pathname === '/authpanel' ?
+          <NavAdminPanel /> : ''}
+        {location.pathname !== '/admin-concerts-page' &&
+          location.pathname !== '/admin-tracks-page' &&
+          location.pathname !== '/admin-video-page' &&
+          location.pathname !== '/admin' &&
+          location.pathname !== '/authpanel' ? < Header /> : ''}
+        {routes}
+      </ThemeProvider>
     </AuthContext.Provider >
   );
 }

@@ -1,20 +1,32 @@
-const arr = [
-    { city: 'Санкт-петербург', location: 'Aurora', date: '24 Апреля', link: 'ссылка на покупку билетов' },
-    { city: 'Челябинск', location: 'ГлавCLUB', date: '30 Апреля', link: 'ссылка на покупку билетов' },
-    { city: 'Тверь', location: 'ГлавCLUB', date: '30 Апреля', link: 'ссылка на покупку билетов' },
-    { city: 'Москва', location: 'ГлавCLUB', date: '30 Апреля', link: 'ссылка на покупку билетов' }
-]
+
+import { useState, useEffect, useCallback } from "react"
+import { useHttp } from "../hooks/http.hook"
 
 export const СoncertsPage = () => {
+
+    const [data, setData] = useState([])
+    const { request } = useHttp()
+
+    const fatchConcerts = useCallback(async () => {
+        try {
+            const fatched = await request('/api/concert', 'GET', null, {
+            })
+            setData(fatched)
+        } catch (e) { }
+    }, [request])
+
+    useEffect(() => {
+        fatchConcerts()
+    }, [fatchConcerts, request])
+
     return (
         <>
             <div className="concerts__wrapper">
             </div>
             <div className='container__wrapper'>
-
                 <div className="concerts">
                     {
-                        arr.map((item, i) => {
+                        data.map((item, i) => {
                             return (
                                 <a href={item.link} key={i} className="item">
                                     <div className="location">
@@ -24,7 +36,7 @@ export const СoncertsPage = () => {
                                         {item.city}
                                     </div>
                                     <div className="date">
-                                        {item.date}
+                                        {(new Date(item.date)).toLocaleString('ru', {day: 'numeric',month: 'long'})}
                                     </div>
                                 </a>
                             )

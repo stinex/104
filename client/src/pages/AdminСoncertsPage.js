@@ -42,31 +42,33 @@ export const AdminСoncertsPage = () => {
     }
     return (
         <>
-            <button className=" waves-light btn" onClick={() => setModalActive(true)}>Добавить концер</button>
-            {!data.length ? <p>Концертов нет</p> : <table>
-                <thead>
-                    <tr>
-                        <th>Город</th>
-                        <th>Место ролвеоедния</th>
-                        <th>Дата</th>
-                        <th></th>
-                    </tr>
-                </thead>
+            <div className="container__wrapper">
+                <button className=" waves-light btn" onClick={() => setModalActive(true)}>Добавить концер</button>
+                {!data.length ? <p>Концертов нет</p> : <table>
+                    <thead>
+                        <tr>
+                            <th>Город</th>
+                            <th>Место ролвеоедния</th>
+                            <th>Дата</th>
+                            <th></th>
+                        </tr>
+                    </thead>
 
-                {data.map((data, index) => {
-                    return (
-                        <tbody key={index}>
-                            <tr>
-                                <td>{data.city}</td>
-                                <td>{data.location}</td>
-                                <td>{data.date}</td>
-                                <td><button data-id={data._id} data-number={index} onClick={deleteConsertHandler}>Удалить</button></td>
-                            </tr>
-                        </tbody>
-                    )
-                })}
-            </table>}
-            <Modal active={modalActive} setActive={setModalActive} data={data} p={p} setP={setP} />
+                    {data.map((data, index) => {
+                        return (
+                            <tbody key={index}>
+                                <tr>
+                                    <td>{data.city}</td>
+                                    <td>{data.location}</td>
+                                    <td>{data.date}</td>
+                                    <td><button data-id={data._id} data-number={index} className='red-text' onClick={deleteConsertHandler}>Удалить</button></td>
+                                </tr>
+                            </tbody>
+                        )
+                    })}
+                </table>}
+                <Modal active={modalActive} setActive={setModalActive} data={data} p={p} setP={setP} />
+            </div>
         </>
     )
 }
