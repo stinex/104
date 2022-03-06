@@ -1,4 +1,58 @@
+import { Suspense, useRef } from "react"
+import { Canvas, useFrame, useLoader } from '@react-three/fiber'
+import { Html, useFBX, useGLTF, useTexture } from '@react-three/drei'
+import { TextureLoader } from 'three/src/loaders/TextureLoader.js';
+
+
+
 export const HomePage = () => {
+
+
+
+    const Model = () => {
+        const {scene} = useGLTF('/104_BODY_04_PBR.gltf')
+        return <primitive object={scene} />
+    }
+
+
+
+    /*   function Model() {
+        let fbx = useFBX('/104_BODY_01.fbx')
+        return <primitive object={fbx} dispose={null} />
+      } */
+
+
+
+
+    const Lights = () => {
+        return (
+            <>
+                <ambientLight intensity={0.4} />
+                <directionalLight position={[0, 10, 0]} intensity={1.4} />
+                <directionalLight position={[10, 10, 0]} intensity={1.5} />
+            </>
+        )
+    }
+
+    const HTMLcontent = () => {
+        const texture_1 = useLoader(TextureLoader, '/textur.png');
+        // const texture = useTexture('/textur.png')
+
+
+        return (
+            <>
+                <mesh position={[0, -90, 0]}>
+                    <Model />
+                    <meshStandardMaterial attach="material" map={texture_1}  />
+                </mesh>
+                <Html fullscreen>
+                    <div className="main">
+                        123
+                    </div>
+                </Html>
+            </>
+        )
+    }
     return (
         <div className='container__wrapper'>
             <div className="home">
@@ -10,6 +64,15 @@ export const HomePage = () => {
                         <a href="/contacts-page" ><span></span>контакты</a>
                         <a href="/concerts-page" ><span></span>концерты</a>
                     </div>
+                    <Suspense fallback={null}>
+                        <Canvas
+                            colorManagement
+                            camera={{ position: [0, 40, -440, 0], fov: 30 }}
+                        >
+                            <Lights />
+                            <HTMLcontent />
+                        </Canvas>
+                    </Suspense>
                     <div className="information">
                         <span>// музыкант</span>
                         <span>рэп-исполнитель</span>

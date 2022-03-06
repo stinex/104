@@ -64,7 +64,7 @@ function App() {
   }
 
   /*  !preloader */
-  if (!preloader && location.pathname === '/') {
+  if (false && location.pathname === '/') {
     return (
       <div className='wrapper_preloader'>
         <video ref={refPreloader} className='preloader' playsinline autoplay='true' muted loop id="myVideo">
