@@ -9,17 +9,20 @@ export const HomePage = () => {
 
 
 
-    const Model = () => {
+   /*  const Model = () => {
         const { scene } = useGLTF('/104_BODY_06_PBR.gltf')
         return <primitive object={scene} />
+    } */
+    const Model = () => {
+        const scene = useFBX('/104_BODY_08_FBX.fbx')
+        return <primitive object={scene} dispose={null}  />
     }
-
     const Lights = () => {
         return (
             <>
-                <ambientLight intensity={0.4} />
-                <directionalLight position={[0, 10, 0]} intensity={1} />
-                <directionalLight position={[10, 10, 0]} intensity={1} />
+                <ambientLight intensity={0.35} />
+                <directionalLight position={[0, 10, 0]} intensity={0.7} />
+                <directionalLight position={[10, 10, 0]} intensity={0.7} />
             </>
         )
     }
@@ -52,7 +55,7 @@ export const HomePage = () => {
                             <Suspense fallback={null}>
                                 <Canvas
                                     colorManagement
-                                    camera={{ position: [0, 40, -440, 0], fov: 30 }}
+                                    camera={{ position: [0, 40, 400, 0], fov: 30 }}
                                 >
                                     <Lights />
                                     <HTMLcontent />
