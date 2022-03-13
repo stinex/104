@@ -16,6 +16,7 @@
                 background: url(../../img/arrow79x71.svg) center no-repeat;
                 width: 80px;
                 height: 70px;
+                cursor: none;
 
                 &::after {
                     display: none;
@@ -41,7 +42,7 @@
                 }
 
                 & img {
-                    cursor: pointer;
+                    // cursor: pointer;
                     position: relative;
                     z-index: 2;
                 }
@@ -81,7 +82,7 @@
         & .mobile__video {
             display: none;
             & .item {
-                cursor: pointer;
+                // cursor: pointer;
             }
         }
     }
@@ -117,6 +118,7 @@
                 }
             }
             & .information {
+                position: relative;
                 & .title {
                     margin-bottom: 6px;
                     font-size: 30px;

@@ -3,7 +3,10 @@ import { AuthContext } from "../context/AuthContext";
 import { useHttp } from "../hooks/http.hook";
 import { useMassager } from "../hooks/massager.hook";
 
+
+
 export const AuthPage = () => {
+    document.body.classList.add('admin');
     const message = useMassager();
     const auth = useContext(AuthContext);
     const { loading, error, request, clearError } = useHttp()

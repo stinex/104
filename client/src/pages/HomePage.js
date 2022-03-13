@@ -1,21 +1,17 @@
-import { Suspense, useRef } from "react"
+import { Suspense, useRef, useState } from "react"
 import { Canvas, useFrame, useLoader } from '@react-three/fiber'
-import { Html, useFBX, useGLTF, useTexture } from '@react-three/drei'
+import { useFBX } from '@react-three/drei'
 import { TextureLoader } from 'three/src/loaders/TextureLoader.js';
 
 
 
 export const HomePage = () => {
 
+    let rotation = true
 
-
-   /*  const Model = () => {
-        const { scene } = useGLTF('/104_BODY_06_PBR.gltf')
-        return <primitive object={scene} />
-    } */
     const Model = () => {
         const scene = useFBX('/104_BODY_08_FBX.fbx')
-        return <primitive object={scene} dispose={null}  />
+        return <primitive object={scene} dispose={null} />
     }
     const Lights = () => {
         return (
@@ -30,9 +26,21 @@ export const HomePage = () => {
     const HTMLcontent = () => {
         const texture_1 = useLoader(TextureLoader, '/textur.png');
 
+        const [pos, setPos] = useState()
+        const animation = useRef()
+
+        useFrame(() => {
+            if (rotation === true) {
+                setPos(animation.current.rotation.y += 0.0035)
+                pos >= 0.6 ? rotation = false : rotation = true
+            } else {
+                setPos(animation.current.rotation.y -= 0.0035)
+                pos >= -0.6 ? rotation = false : rotation = true
+            }
+        })
 
         return (
-            <mesh position={[0, -90, 0]}>
+            <mesh ref={animation} position={[0, -90, 0]}>
                 <Model />
                 <meshStandardMaterial attach="material" map={texture_1} />
             </mesh>

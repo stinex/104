@@ -1,4 +1,5 @@
 export const AdminPage = () => {
+    document.body.classList.add('admin');
     return (
         <>
             <div className="container__wrapper">

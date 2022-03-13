@@ -5,6 +5,7 @@ import { AuthContext } from "../context/AuthContext";
 import { useHttp } from "../hooks/http.hook";
 
 export const AdminVideoPage = () => {
+    document.body.classList.add('admin');
     const auth = useContext(AuthContext)
     const { request, loading } = useHttp()
     const [modalActive, setModalActive] = useState(false)

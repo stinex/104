@@ -4,7 +4,10 @@ import { AddTrackAdmin } from "../components/modals/AddTrackAdmin";
 import { AuthContext } from "../context/AuthContext";
 import { useHttp } from "../hooks/http.hook";
 
+
+
 export const AdminTracksPage = () => {
+    document.body.classList.add('admin');
     const auth = useContext(AuthContext)
     const { request, loading } = useHttp()
     const [modalActive, setModalActive] = useState(false)
