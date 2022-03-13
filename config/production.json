@@ -1,0 +1,6 @@
+{
+    "port": 5000,
+    "jwtSecret": "stinex 104",
+    "mongoUri": "mongodb+srv://vladislav104:qwerQWER@cluster0.nv2g3.mongodb.net/104_mern?retryWrites=true&w=majority",
+    "baseUrl": "http://localhost:5000"
+}
