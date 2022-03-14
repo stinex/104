@@ -134,6 +134,10 @@
 
         & .home__wrapper {
             align-items: flex-start;
+
+            &  .block{
+                max-width: 100%;
+            }
             & .nav__home {
                 & a {
                     font-size: 30px;
