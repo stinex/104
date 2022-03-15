@@ -157,13 +157,13 @@
             padding-top: 0px;
             & .logo {
                 & img {
-                    height: 71px;
+                    height: 71px !important;
                 }
             }
 
             & .right_header {
                 & .nav_bar {
-                    width: 50px;
+                    width: 50px !important;
                     height: 22px;
                     & span {
                         height: 2px;
