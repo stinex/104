@@ -81,68 +81,71 @@ function App() {
 
   const [st, setSt] = useState(false)
   useEffect(() => {
-    document.addEventListener('mousemove', (event) => {
-      const { clientX, clientY } = event
-      const mouseX = clientX
-      const mouseY = clientY
+    if (positionRef) {
+      document.addEventListener('mousemove', (event) => {
+        const { clientX, clientY } = event
+        const mouseX = clientX
+        const mouseY = clientY
 
-      positionRef.current.mouseX = mouseX - aura.current.clientWidth / 2
-      positionRef.current.mouseY = mouseY - aura.current.clientHeight / 2
+        positionRef.current.mouseX = mouseX - aura.current.clientWidth / 2
+        positionRef.current.mouseY = mouseY - aura.current.clientHeight / 2
 
-      cursor.current.style.transform = `
+        cursor.current.style.transform = `
       translate3d(${mouseX - cursor.current.clientWidth / 2}px, ${mouseY - cursor.current.clientHeight / 2}px, 0)
       `
-      return () => { }
-    })
-    setSt(true)
+        return () => { }
+      })
+      setSt(true)
+    }
   }, [])
 
   useEffect(() => {
-    if (st === true) {
-      const followMouse = () => {
-        positionRef.current.key = requestAnimationFrame(followMouse)
+    if (positionRef) {
+      if (st === true) {
+        const followMouse = () => {
+          positionRef.current.key = requestAnimationFrame(followMouse)
 
-        const {
-          mouseX,
-          mouseY,
-          destinationX,
-          destinationY,
-          distanceX,
-          distanceY,
-        } = positionRef.current
+          const {
+            mouseX,
+            mouseY,
+            destinationX,
+            destinationY,
+            distanceX,
+            distanceY,
+          } = positionRef.current
 
-        if (!destinationX | !destinationY) {
-          positionRef.current.destinationX = mouseX
-          positionRef.current.destinationY = mouseY
-        } else {
-          positionRef.current.distanceX = (mouseX - destinationX) * 0.1
-          positionRef.current.distanceY = (mouseY - destinationY) * 0.1
-
-          if (Math.abs(positionRef.current.distanceX) + Math.abs(positionRef.current.distanceY) < 0.1) {
+          if (!destinationX | !destinationY) {
             positionRef.current.destinationX = mouseX
             positionRef.current.destinationY = mouseY
           } else {
-            positionRef.current.destinationX += distanceX
-            positionRef.current.destinationY += distanceY
+            positionRef.current.distanceX = (mouseX - destinationX) * 0.1
+            positionRef.current.distanceY = (mouseY - destinationY) * 0.1
+
+            if (Math.abs(positionRef.current.distanceX) + Math.abs(positionRef.current.distanceY) < 0.1) {
+              positionRef.current.destinationX = mouseX
+              positionRef.current.destinationY = mouseY
+            } else {
+              positionRef.current.destinationX += distanceX
+              positionRef.current.destinationY += distanceY
+            }
           }
+
+          aura.current.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`
         }
+        followMouse()
 
-        aura.current.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`
+        const link = document.querySelectorAll('a')
+
+        link.forEach(a => {
+          a.addEventListener('mouseover', () => {
+            cursor.current.classList.add('hover')
+          })
+          a.addEventListener('mouseleave', () => {
+            cursor.current.classList.remove('hover')
+          })
+        })
       }
-      followMouse()
-
-      const link = document.querySelectorAll('a')
-
-      link.forEach(a => {
-        a.addEventListener('mouseover', () => {
-          cursor.current.classList.add('hover')
-        })
-        a.addEventListener('mouseleave', () => {
-          cursor.current.classList.remove('hover')
-        })
-      })
     }
-
 
   }, [st])
 
@@ -158,11 +161,19 @@ function App() {
         <video ref={refPreloader} className='preloader' playsinline autoplay='true' muted loop id="myVideo">
           <source src={Preloader} type="video/mp4" />
         </video>
+        <div ref={cursor} className="cursor"></div>
+        <div ref={aura} className="aura"></div>
       </div>
     )
   }
   if (!ready) {
-    return (<Loader />)
+    return (
+      <>
+        <div ref={cursor} className="cursor"></div>
+        <div ref={aura} className="aura"></div>
+        <Loader />
+      </>
+    )
   }
   return (
 
