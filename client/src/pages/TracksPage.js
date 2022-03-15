@@ -65,8 +65,8 @@ export const TracksPage = () => {
                         if ((window.pageYOffset > animItemOffset - animItemPoint) && window.pageYOffset < (animItemOffset + animItemHeight)) {
                             animItem.classList.add('_active')
                         } else {
-                            if(index !== 0 )
-                            animItem.classList.remove('_active')
+                            if (index !== 0)
+                                animItem.classList.remove('_active')
                         }
                     }
 
@@ -104,32 +104,33 @@ export const TracksPage = () => {
                                     <div className="name" data-aos='fade-up'>
                                         {item?.name}
                                     </div>
-                                    <span data-aos='fade-up'>слушать:</span>
-                                    <div className="music__venuea">
+                                    <div data-aos='fade-up'>
+                                        <span >слушать:</span>
+                                        <div className="music__venuea">
 
-                                        {item.url_spotify === '' ? '' :
-                                            <a href={item.url_spotify} target='_blank' data-aos='fade-up' className="Spotify" rel="noreferrer">
-                                                <img src={Spotify} alt="" />
-                                            </a>
-                                        }
-                                        {item.url_vk_music === '' ? '' :
-                                            <a href={item.url_vk_music} target='_blank' data-aos='fade-up' className="vkMusic" rel="noreferrer">
-                                                <img src={vkMusic} alt="" />
-                                            </a>
-                                        }
-                                        {item.url_itunes === '' ? '' :
-                                            <a href={item.url_itunes} className="AppleMusic" data-aos='fade-up'>
-                                                <img src={AppleMusic} alt="" />
-                                            </a>
-                                        }
-                                        {item.url_yandex_music === '' ? '' :
-                                            <a href={item.url_yandex_music} target='_blank' className="YandexMusic" data-aos='fade-up' rel="noreferrer">
-                                                <img src={YandexMusic} alt="" />
-                                            </a>
-                                        }
+                                            {item.url_spotify === '' ? '' :
+                                                <a href={item.url_spotify} target='_blank' className="Spotify" rel="noreferrer">
+                                                    <img src={Spotify} alt="" />
+                                                </a>
+                                            }
+                                            {item.url_vk_music === '' ? '' :
+                                                <a href={item.url_vk_music} target='_blank' className="vkMusic" rel="noreferrer">
+                                                    <img src={vkMusic} alt="" />
+                                                </a>
+                                            }
+                                            {item.url_itunes === '' ? '' :
+                                                <a href={item.url_itunes} className="AppleMusic" >
+                                                    <img src={AppleMusic} alt="" />
+                                                </a>
+                                            }
+                                            {item.url_yandex_music === '' ? '' :
+                                                <a href={item.url_yandex_music} target='_blank' className="YandexMusic" rel="noreferrer">
+                                                    <img src={YandexMusic} alt="" />
+                                                </a>
+                                            }
 
+                                        </div>
                                     </div>
-
                                     <img className='cover _anim-items' ref={addRef} src={item?.img} alt="" />
                                 </div>
                             )
