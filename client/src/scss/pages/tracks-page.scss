@@ -55,18 +55,18 @@
             left: 50%;
             top: 50%;
             z-index: 1;
-            transform: translate(-50%, -50%) rotate(-15deg);
+            transform: translate(-50%, -15%) rotate(-15deg);
             transition: all 300ms ease;
             &._anim-items._active {
-                transform: translate(-50%, -50%) rotate(0);
+                transform: translate(-50%, -15%) rotate(0);
             }
         }
 
         &:nth-child(2n) {
             & .cover {
-                transform: translate(-50%, -50%) rotate(15deg);
+                transform: translate(-50%, -15%) rotate(15deg);
                 &._anim-items._active {
-                    transform: translate(-50%, -50%)  rotate(0);
+                    transform: translate(-50%, -15%)  rotate(0);
                 }
             }
         }
