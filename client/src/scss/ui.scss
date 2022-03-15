@@ -87,6 +87,11 @@ button {
     .container__wrapper {
         padding: 0 15px;
     }
+    .wrapper_preloader {
+        & .preloader{
+            width: 100%;
+        }
+    }
 }
 
 // CURSOR
