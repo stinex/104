@@ -151,50 +151,7 @@
     }
 }
 
-@media (max-width: 680px) {
-    .header__wrapper {
-        & .header {
-            padding-top: 0px;
-            & .logo {
-                & img {
-                    height: 71px !important;
-                }
-            }
 
-            & .right_header {
-                & .nav_bar {
-                    width: 50px !important;
-                    height: 22px;
-                    & span {
-                        height: 2px;
-
-                        &::after,
-                        &::before {
-                            height: 2px;
-                        }
-                    }
-                }
-
-                & .social {
-                    right: -195px;
-                    & .link {
-                        font-size: 12px;
-                        padding: 0px;
-
-                        &::after {
-                            font-weight: 300;
-                        }
-                    }
-
-                    & span {
-                        width: 30px !important;
-                        margin: 0 10px !important;
-                    }
-                }
-            }
-        }
-    }
-}
 
 @keyframes openMenuM {
     0% {
@@ -389,15 +346,64 @@
 @media (max-width: 1023px) {
     .header__wrapper {
         & .header {
+            height: 106px;
             padding-top: 0px;
+            align-items: center;
             & .logo {
                 & img {
                     height: 106px;
                 }
             }
             & .right_header {
+                padding: 0;
                 & .nav_bar {
                     width: 72px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 680px) {
+    .header__wrapper {
+        & .header {
+            padding-top: 0px;
+            height: 71px;
+            & .logo {
+                & img {
+                    height: 71px;
+                }
+            }
+
+            & .right_header {
+                & .nav_bar {
+                    width: 50px;
+                    height: 22px;
+                    & span {
+                        height: 2px;
+
+                        &::after,
+                        &::before {
+                            height: 2px;
+                        }
+                    }
+                }
+
+                & .social {
+                    right: -195px;
+                    & .link {
+                        font-size: 12px;
+                        padding: 0px;
+
+                        &::after {
+                            font-weight: 300;
+                        }
+                    }
+
+                    & span {
+                        width: 30px !important;
+                        margin: 0 10px !important;
+                    }
                 }
             }
         }

@@ -78,6 +78,17 @@
     }
 }
 
+.block-canvas {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 20px 0;
+    padding-left: 20%;
+    & .canvas {
+        height: 100%;
+    }
+}
+
 @media (max-width: 1023px) {
     .header__wrapper {
         & .header {
@@ -135,7 +146,7 @@
         & .home__wrapper {
             align-items: flex-start;
 
-            &  .block{
+            & .block {
                 max-width: 100%;
             }
             & .nav__home {
@@ -149,5 +160,9 @@
                 }
             }
         }
+    }
+    .block-canvas {
+        padding: 0;
+        padding-left: 20%;
     }
 }

@@ -14,6 +14,7 @@ export const AboutMePage = () => {
                     <p>2021 год для артиста отмечен выпуском совместного альбома с SALUKI под названием <span>«СТЫД ИЛИ СЛАВА»</span>, мгновенно завоевавшего первые места чартов.</p>
                 </div>
             </div>
+            <div className="about_me__wrapper-bottom"></div>
         </>
     )
 }

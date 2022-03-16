@@ -47,13 +47,18 @@ button {
     margin: 0 auto;
     padding: 0 15px;
 }
-
+.container__wrapper._home{
+    overflow: hidden;
+}
 .wrapper_preloader {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100vh;
+    background: #000;
+    position: absolute;
+    z-index: 100000000000;
 
     & .preloader {
         max-height: 500px;
@@ -103,13 +108,13 @@ button {
     transition: cubic-bezier(0.75, -1.27, 0.3, 2.33) transform, 0.2s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
     user-select: none;
     pointer-events: none;
-    z-index: 10000;
+    z-index: 10000000;
 }
 
 .cursor {
     width: 8px;
     height: 8px;
-    background-color: rgba(#fff, 0.5);
+    background-color: rgba(#fff, 0.8);
 }
 
 .aura {
