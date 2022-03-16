@@ -36,6 +36,12 @@
 
             & .swiper-slide {
                 position: relative;
+                opacity: 0.5;
+                transition: all 200ms ease-in-out;
+
+                &.swiper-slide-active {
+                    opacity: 1;
+                }
 
                 .video__iframe {
                     position: relative;
@@ -86,6 +92,10 @@
             }
         }
     }
+}
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+    opacity: 0 !important;
 }
 @media (max-width: 1250px) {
     .video {
