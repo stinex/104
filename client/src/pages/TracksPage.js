@@ -94,7 +94,7 @@ export const TracksPage = () => {
             <div className='container__wrapper'>
                 <div className="tracks">
                     {
-                        data.map((item, i) => {
+                        data.reverse().map((item, i) => {
                             return (
 
                                 <div key={i} className="track">

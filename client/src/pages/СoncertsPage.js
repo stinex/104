@@ -26,7 +26,7 @@ export const СoncertsPage = () => {
             <div className='container__wrapper'>
                 <div className="concerts">
                     {
-                        data.map((item, i) => {
+                        data.reverse().map((item, i) => {
                             return (
                                 <a href={item.link} key={i} className="item">
                                     <div className="location">
