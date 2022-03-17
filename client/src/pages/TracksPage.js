@@ -37,7 +37,6 @@ export const TracksPage = () => {
         if (el && !imgRef.current.includes(el)) {
             imgRef.current.push(el)
         }
-        console.log(imgRef.current)
     }
 
 

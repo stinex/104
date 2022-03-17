@@ -36,7 +36,7 @@ router.post(
 router.get('/', async (req, res) => {
     try {
         const concerts = await Concert.find()
-        res.json(concerts)
+        res.json(concerts.reverse())
 
     } catch (e) {
         res.status(500).json({ message: 'Какие-то проблемы' })
