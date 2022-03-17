@@ -57,7 +57,7 @@ export const VideoPage = () => {
                         {data.map((item, i) => {
                             return (
                                 <div key={i} className='item'>
-                                    <img src={item.img} onClick={e => openModal(e)} data-link={item.link} alt="" />
+                                    <img src={item.img}  alt="" onClick={e => openModal(e)} data-link={item.link} />
                                     <div className="information">
                                         <div className="title">{item.name}</div>
                                         <div className="year">{item.year}</div>
