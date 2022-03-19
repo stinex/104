@@ -1,6 +1,12 @@
-.track__panel img{
+.track__panel img {
     width: 100px;
 }
-.video__panel img{
+.video__panel img {
     width: 150px;
+}
+.admin td,
+.admin th {
+    max-width: 100px;
+    white-space: nowrap;
+    overflow-y: hidden;
 }
