@@ -61,7 +61,7 @@ export const AdminСoncertsPage = () => {
                                 <tr>
                                     <td>{data.city}</td>
                                     <td>{data.location}</td>
-                                    <td>{data.date}</td>
+                                    <td>{(new Date(data.date)).toLocaleString('ru', {day: 'numeric',month: 'long'})}</td>
                                     <td><button data-id={data._id} data-number={index} className='red-text' onClick={deleteConsertHandler}>Удалить</button></td>
                                 </tr>
                             </tbody>
