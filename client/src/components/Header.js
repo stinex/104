@@ -14,7 +14,7 @@ export const Header = () => {
     return (
         <>
             <div className="header__wrapper">
-                <div className={ location.pathname === '/' ? 'blur hide': 'blur' }></div>
+                <div className={ location.pathname === '/about-page' || location.pathname === '/' ? 'blur hide': 'blur' }></div>
                 <div className="container__wrapper">
                     <div className="header">
 
