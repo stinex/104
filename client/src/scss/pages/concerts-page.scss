@@ -75,6 +75,7 @@
     .concerts__wrapper {
         background: url(../../img/bg-concerts-s.png) center no-repeat;
         background-position: center 76px;
+        background-size: contain;
     }
     .concerts {
         padding-top: 39vh;

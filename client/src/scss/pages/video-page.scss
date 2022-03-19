@@ -97,6 +97,16 @@
 .swiper-button-prev.swiper-button-disabled {
     opacity: 0 !important;
 }
+@media (max-width: 1300px) {
+    .video .video__wrapper {
+        margin: 100px auto 132px;
+        max-width: 578px;
+        width: 100%;
+    }
+    .video .video__wrapper .swiper .swiper-slide img {
+        width: 100%;
+    }
+}
 @media (max-width: 1250px) {
     .video {
         & .video__wrapper {

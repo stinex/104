@@ -45,3 +45,16 @@
 .YouTube_wrapper.open {
     transform: scale(1);
 }
+@media (max-width: 1023px) {
+    .YouTube__content{
+        width: 99vw;
+        height: 40vh;
+    }
+}
+
+@media (max-width: 680px) {
+    .YouTube__content{
+        width: 99vw;
+        height: 24vh;
+    }
+}
