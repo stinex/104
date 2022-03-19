@@ -20,9 +20,9 @@ export const AuthPage = () => {
         clearError()
     }, [error, message, clearError]);
 
-    useEffect(() => {
+  /*   useEffect(() => {
         window.M.updateTextFields()
-    });
+    }); */
 
     const chengeHandler = event => {
         setForm({ ...form, [event.target.name]: event.target.value })
@@ -53,9 +53,9 @@ export const AuthPage = () => {
                                 id="login"
                                 name="login"
                                 className="autocomplete"
+                                placeholder="Login"
                                 value={form.login}
                                 onChange={chengeHandler} />
-                            <label htmlFor="autocomplete-input">Login</label>
                         </div>
                         <div className="input-field col s12">
                             <input
@@ -63,9 +63,9 @@ export const AuthPage = () => {
                                 id="password"
                                 name="password"
                                 className="autocomplete"
+                                placeholder="Password"
                                 value={form.password}
                                 onChange={chengeHandler} />
-                            <label htmlFor="autocomplete-input">Password</label>
                         </div>
                         <div className="col s12">
                             <button className="btn blue-grey darken-4" onClick={loginHandler} disabled={loading}>sign in</button>
