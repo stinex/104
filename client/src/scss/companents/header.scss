@@ -27,6 +27,9 @@
             position: relative;
             z-index: 2;
             height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         & .right_header {
             display: flex;
