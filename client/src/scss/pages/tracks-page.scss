@@ -7,6 +7,10 @@
         &:last-child {
             margin-bottom: 200px;
         }
+        & .links_blocks {
+            position: relative;
+            z-index: 3;
+        }
         & span {
             display: block;
             font-size: 20px;
@@ -46,8 +50,43 @@
             position: relative;
             z-index: 2;
 
+            & .Spotify {
+                background: url(../../img/spotify.png) no-repeat center;
+                background-size: cover;
+                &:hover {
+                    background: url(../../img/spotify-hover.png) no-repeat center;
+                    background-size: cover;
+                }
+            }
+            & .vkMusic {
+                background: url(../../img/vk-music.png) no-repeat center;
+                background-size: cover;
+                &:hover {
+                    background: url(../../img/vk-music-hover.png) no-repeat center;
+                    background-size: cover;
+                }
+            }
+            & .AppleMusic {
+                background: url(../../img/apple-music.png) no-repeat center;
+                background-size: cover;
+                &:hover {
+                    background: url(../../img/apple-music-hover.png) no-repeat center;
+                    background-size: cover;
+                }
+            }
+            & .YandexMusic {
+                background: url(../../img/yandex-music.png) no-repeat center;
+                background-size: cover;
+                &:hover {
+                    background: url(../../img/yandex-music-hover.png) no-repeat center;
+                    background-size: cover;
+                }
+            }
+
             & a {
                 display: block;
+                width: 91px;
+                height: 28px;
             }
         }
         & .cover {
@@ -117,6 +156,7 @@
                 margin-bottom: 18px;
             }
             & .name {
+                height: 36px;
                 font-size: 30px;
                 margin-bottom: 184px;
             }
